@@ -223,10 +223,6 @@
 
 <svelte:window
   on:resize={computeSizes}
-  on:mousemove={onMouseMove}
-  on:mouseup|capture={onDragStopped}
-  on:touchmove|nonpassive|preventDefault={onTouchMove}
-  on:touchend={onDragStopped}
 />
 <div
   class="container"
@@ -236,6 +232,10 @@
   on:wheel|preventDefault={onWheel}
   on:gesturestart|preventDefault
   on:gesturechange|preventDefault
+  on:mousemove={onMouseMove}
+  on:mouseup|capture={onDragStopped}
+  on:touchmove|nonpassive|preventDefault={onTouchMove}
+  on:touchend={onDragStopped}
   data-testid="container"
 >
   <img
